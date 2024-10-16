@@ -1,0 +1,588 @@
+
+/* Header Fixe */
+.phone-input-container {
+    display: flex;
+    align-items: center;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-shadow: none;
+    transition: box-shadow 0.3s ease, border-color 0.3s ease;
+    width: 100%;
+    position: relative;
+}
+
+.phone-input-container:focus-within {
+    box-shadow: 0 0 8px 2px rgba(0, 123, 255, 0.8);
+    border-color: rgba(0, 123, 255, 0.8);
+}
+
+.dropdown-button {
+    padding: 10px;
+    cursor: pointer;
+    background-color: white;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    border-right: 1px solid #ccc;
+    border-radius: 8px 0 0 8px;
+    position: relative;
+    transition: background-color 0.3s ease;
+}
+
+.dropdown-button:hover {
+    background-color: #f0f0f0;
+}
+
+.country-image {
+    border-radius: 4px;
+    display: block;
+    width: 20px;
+    height: 15px;
+    margin-right: 5px;
+}
+
+.dropdown-arrow {
+    position: absolute;
+    bottom: 2px;
+    right: 2px;
+    font-size: 10px;
+    color: #000;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: white;
+    min-width: 200px;
+    max-width: 300px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 10;
+    border-radius: 8px;
+    max-height: 400px;
+    overflow-y: auto;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    opacity: 0;
+    transform: scaleY(0);
+    transform-origin: top;
+}
+
+.dropdown.active .dropdown-content {
+    display: block;
+    opacity: 1;
+    transform: scaleY(1);
+}
+
+/* Styles spécifiques pour les éléments de pays */
+.dropdown-item {
+    padding: 10px 10px 10px 30px;
+    cursor: pointer;
+    background-color: white;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    display: flex;
+    align-items: center;
+}
+
+.dropdown-item:hover {
+    background-color: #007bff;
+    color: white;
+}
+
+.dropdown-item:active {
+    background-color: #0056b3;
+    color: white;
+}
+
+/* Styles spécifiques pour les sections alphabétiques (lettres) */
+.dropdown-section {
+    padding: 10px;
+    font-weight: bold;
+    color: #333;
+    cursor: default;
+    background-color: white;
+    position: sticky;
+    top: 0;
+    z-index: 5;
+}
+
+.dropdown-section:hover {
+    background-color: white;
+    color: #333;
+}
+
+.country-indicative {
+    font-style: italic;
+    color: gray;
+    margin-left: auto;
+}
+
+.phone-number-input {
+    border: none;
+    padding: auto;
+    flex: 1;
+    outline: none;
+    border-radius: 0 8px 8px 0;
+    transition: border-radius 0.3s ease;
+    height: 10px;
+    color: #333;
+}
+
+.phone-number-input:focus {
+    border-radius: 0 8px 8px 0;
+}
+
+.card-input-group {
+    position: relative;
+    display: flex;
+    align-items: center;
+    border: 1px solid #ccc;
+    border-top: 1px solid rgba(204, 204, 204, 0.6);
+    border-radius: 8px;
+    padding: 0;
+    width: 100%;
+    height: 50px;
+    background-color: white;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.card-input-group:focus-within {
+    box-shadow: 0 0 8px 2px rgba(0, 123, 255, 0.8);
+    border-color: rgba(0, 123, 255, 0.8);
+}
+
+.card-input-group input {
+    border: none;
+    outline: none;
+    text-indent: 35px;
+    padding-left: 60px;
+    padding-right: 40px;
+    font-size: 1rem;
+    height: 100%;
+    width: 100%;
+    border-radius: 8px;
+    background-color: transparent;
+}
+
+.card-logo-left {
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    height: auto;
+    width: auto;
+    display: none;
+}
+
+.card-logos-right {
+    position: absolute;
+    right: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.card-logos-right img {
+    height: auto;
+    margin-left: 8px;
+}
+
+.slideshow {
+    height: auto;
+    margin-left: 8px;
+    opacity: 1;
+    transition: opacity 1s ease-in-out;
+}
+
+.result {
+    font-size: 18px;
+    margin-top: 10px;
+    color: #333;
+}
+
+.valid {
+    color: green;
+}
+
+.invalid {
+    color: red;
+}
+
+.or-separator {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    margin: 24px 0;
+}
+
+.or-separator::before,
+.or-separator::after {
+    content: '';
+    flex: 1;
+    border-bottom: 1px solid #ccc;
+}
+
+.or-separator::before {
+    margin-right: 12px;
+}
+
+.or-separator::after {
+    margin-left: 12px;
+}
+
+.loading-spinner {
+    margin-left: 10px;
+    display: none;
+}
+
+.loading-spinner.active {
+    display: inline-block;
+}
+
+.section-spacing {
+    margin-bottom: 24px;
+}
+
+select {
+    background-color: white;
+    border-radius: 8px;
+    height: 50px;
+    padding: 10px;
+    text-indent: 15px;
+    width: 100%;
+    box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.1);
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+}
+
+select:focus {
+    border-color: rgba(0, 123, 255, 0.8);
+}
+
+.cvc-input-group {
+    position: relative;
+    display: flex;
+    align-items: center;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 0;
+    width: 100%;
+    height: 50px;
+    box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.cvc-input-group:focus-within {
+    box-shadow: 0 0 8px 2px rgba(0, 123, 255, 0.8);
+    border-color: rgba(0, 123, 255, 0.8);
+}
+
+.cvc-input-group input {
+    border: none;
+    outline: none;
+    padding-right: 40px;
+    font-size: 1rem;
+    height: 100%;
+    width: 100%;
+    border-radius: 8px;
+}
+
+.cvc-logo {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    align-items: center;
+    font-size: 12px;
+}
+
+/* Transitions pour dropdown */
+.dropdown-content {
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+/* Styles pour les flags dans la dropdown */
+.dropdown-item img.country-flag {
+    width: 20px;
+    height: 15px;
+    margin-right: 10px;
+}
+
+.result.invalid {
+    display: block;
+    color: red;
+    margin-top: 5px;
+    font-size: 0.875rem;
+}
+
+/* Uniformiser les hauteurs sur tous les champs */
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+select {
+    height: 50px;
+    padding: 10px;
+    font-size: 1rem;
+    box-sizing: border-box;
+}
+
+/* Styles pour le header fixe en mode mobile */
+@media (max-width: 768px) {
+    body {
+        background-color: white;
+    }
+
+    /* Flexbox pour aligner les champs "Date d'expiration" et "CVC" sur une seule ligne */
+    .flex-row-mobile {
+        display: flex;
+        flex-direction: row;
+        gap: 12px;
+    }
+
+    /* Cacher les labels uniquement sur mobile */
+    .hide-label-mobile {
+        display: none;
+    }
+
+    /* Adapter la largeur des inputs pour qu'ils soient égaux */
+    .input-half {
+        flex: 1;
+    }
+
+    /* En dessous de 768px, fixer le nouveau header en haut */
+    .fixed-mobile-header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 1050;
+        background-color: white;
+        padding: 10px;
+        border-bottom: none;
+        transition: border-bottom 0.3s ease;
+    }
+
+    .fixed-mobile-header.scrolled {
+        border-bottom: 0.5px solid #ccc;
+    }
+
+    .fixed-mobile-header.no-border {
+        border-bottom: none !important; /* Supprime la bordure inférieure */
+    }
+
+    /* Espace supplémentaire pour compenser le header fixe */
+    .header-placeholder {
+        height: 70px;
+    }
+
+    /* Cacher l'ancien header en mode mobile */
+    .desktop-header {
+        display: none;
+    }
+
+    .desktop-only {
+        display: none !important;
+    }
+
+    .bg-white.rounded-lg.shadow-lg {
+        background-color: transparent;
+        box-shadow: none;
+        border: none;
+        padding: 0;
+    }
+
+    .mobile-pay-title {
+        color: #d3d3d3;
+    }
+}
+
+@media (min-width: 769px) {
+    /* En mode desktop, cacher le header mobile et afficher le header desktop */
+    .fixed-mobile-header {
+        display: none !important;
+    }
+
+    .desktop-header {
+        display: block;
+    }
+
+    .header-placeholder {
+        display: none;
+    }
+    /* Flexbox pour aligner les champs "Date d'expiration" et "CVC" sur une seule ligne en version desktop */
+    .flex-row-desktop {
+        display: flex;
+        flex-direction: row;
+        gap: 12px;
+    }
+    /* Adapter la largeur des inputs pour qu'ils soient égaux en version desktop */
+    .input-half {
+        flex: 1;
+    }
+}
+
+/* Popup styling visible uniquement sur mobile */
+#popup {
+    position: fixed;
+    top: calc(100% - 100vh + 70px); /* 70px est la hauteur approximative du header */
+    left: 0;
+    right: 0;
+    background-color: white;
+    z-index: 1001; /* Assurez-vous que la popup soit au-dessus de l'overlay */; /* Derrière le header */
+    padding: 20px;
+    max-height: 400px;
+    overflow-y: auto;
+    transform: translateY(-100%); /* Cacher la popup initialement au-dessus de la page */
+    transition: transform 0.5s ease-in-out;
+    border: none; /* Enlever les bordures */
+    display: none; /* Cacher la popup tant qu'elle n'est pas activée */
+}
+
+#popup.open {
+    transform: translateY(0); /* Faire descendre la popup */
+    display: block;
+}
+
+/* Pas de bordure pour la popup */
+#popup.no-border {
+    border: none;
+}
+
+/* Overlay styling */
+#overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1000; /* Derrière la popup */
+    display: none;
+}
+
+#overlay.active {
+    display: block;
+}
+
+/* Réduire le z-index des champs qui posent problème */
+input, select, textarea {
+    z-index: 1;
+}
+
+/* Cacher la popup en mode desktop */
+@media (min-width: 769px) {
+    #popup,
+    #overlay {
+        display: none !important;
+    }
+}
+
+/* Toujours visible en mode mobile */
+@media (max-width: 768px) {
+    #popup {
+        display: block;
+    }
+}
+
+/* Styles pour le bouton de fermeture */
+#closePopupBtn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: transparent;
+    border: none;
+    color: #000;
+    font-size: 18px;
+    display: none; /* Cacher le bouton de fermeture tant que la popup est inactive */
+    cursor: pointer;
+}
+
+/* Affiche le bouton de fermeture quand la popup est active */
+#popup.open #closePopupBtn {
+    display: block;
+}
+
+#toggleDetailsBtn {
+    text-decoration: underline dotted; /* Ligne en pointillés sous le texte */
+    text-underline-offset: 0px; /* Ajuste la distance entre le texte et la ligne en pointillés */
+    cursor: pointer; /* Ajoute un curseur de pointeur pour indiquer que c'est cliquable */
+}
+
+#toggleDetailsBtn:hover {
+    text-decoration-style: solid; /* Si tu veux un effet différent au survol */
+}
+
+
+
+/* Overlay pour la popup */
+#appleOverlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+}
+
+/* Style de la popup */
+#applePayPopup {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    width: 300px;
+    max-width: 80%;
+}
+
+/* Bouton de fermeture pour la popup */
+#closeApplePopup {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+    font-size: 16px;
+    color: #333;
+    }
+
+    /* Ajout du logo et du texte "PAY" */
+    .apple-pay-header {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 2rem;
+        font-weight: bold;
+        margin-bottom: 10px;
+        justify-content: flex-start; /* Aligner à gauche */
+    }
+
+    .apple-pay-header .fab {
+        margin-left: 8px;
+        font-size: 1.5rem;
+    }
+
+    /* Stylisation du bouton "Back" à droite */
+    .popup-footer {
+        display: flex;
+        justify-content: flex-end;
+    }
+
+    .popup-footer button {
+        background-color: black;
+        color: white;
+        padding: 8px 16px;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+
+    .popup-footer button:hover {
+        background-color: #333;
+    }
