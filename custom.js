@@ -238,7 +238,14 @@ document.addEventListener('DOMContentLoaded', function() {
 
     function toggleDropdown() {
         const dropdown = document.querySelector('.dropdown');
-        dropdown.classList.toggle('active');
+        const dropdownContent = dropdown.querySelector('.dropdown-content');
+        const isActive = dropdown.classList.toggle('active');
+    
+        if (isActive) {
+            adjustDropdownDirection();
+        } else {
+            dropdownContent.classList.remove('open-up', 'open-down');
+        }
     }
 
     const dropdownButton = document.getElementById('dropdownButton');
