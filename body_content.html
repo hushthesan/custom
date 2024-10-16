@@ -1,0 +1,457 @@
+<!-- Ancien Header, visible uniquement en mode desktop -->
+<header class="desktop-header bg-white shadow-md py-2">
+    <div class="container mx-auto text-center">
+        <img src="https://thesan-ltd.com/wp-content/uploads/2023/12/cropped-thesanlogo2-1-120x56.png" alt="Logo"
+            class="mx-auto" loading="lazy" />
+    </div>
+</header>
+
+<!-- Nouveau Header pour mobile, non visible en mode desktop bg-white -->
+<header class="fixed-mobile-header flex items-center justify-between px-4 lg:px-6">
+    <div class="flex items-center">
+        <div class="bg-gray-800 text-white rounded-full w-8 h-8 flex items-center justify-center">P</div>
+        <span class="ml-2 text-lg font-semibold">Powdur</span>
+        <span class="ml-2 bg-green-200 text-green-800 text-xs font-semibold px-2 py-1 rounded">Payement</span>
+    </div>
+    <a href="javascript:void(0);" id="toggleDetailsBtn" class="text-gray-500 mt-2 lg:mt-0 flex items-center">
+        <span>Details</span> 
+        <i class="fas fa-chevron-up ml-2"></i> <!-- Flèche vers le haut -->
+    </a>
+</header>
+
+<!-- Placeholder pour compenser le header fixe en mode mobile -->
+<div class="header-placeholder"></div>
+
+<!-- Overlay pour désactiver les clics en arrière-plan quand la popup est ouverte -->
+<div id="overlay"></div>
+
+<!-- Popup cachée sous le header, visible uniquement en mode mobile -->
+<div id="popup" class="no-border">
+    <div class="p-4">
+        <!--
+        <h2 class="text-xl font-bold">Détails de la commande</h2>
+        <p class="text-gray-600 mb-4">Voici quelques détails supplémentaires sur votre commande.</p>
+         Liste des produits -->
+        <ul class="space-y-4">
+            <li class="flex justify-between items-center">
+                <div class="flex items-center">
+                    <img alt="Produit 1" class="w-12 h-12 rounded mr-4" src="https://storage.googleapis.com/a1aa/image/ESixkMXXrPb4DFDBrBXPeevg2WSZUM4sakwIaCA9XcCnLBjTA.jpg" loading="lazy" />
+                    <div>
+                        <p class="font-semibold">The Pure Set</p>
+                        <p class="text-black bg-gray-100 px-1 py-0.5 rounded-md inline-block font-bold">Qty 1</p>
+                    </div>
+                </div>
+                <p class="font-semibold">$65.00</p>
+            </li>
+            <li class="flex justify-between items-center">
+                <div class="flex items-center">
+                    <img alt="Produit 2" class="w-12 h-12 rounded mr-4" src="https://storage.googleapis.com/a1aa/image/gx6M0l7J6V7RG1oBlYJ7JHyiBbUxY3hkffeJRGffgDRmdJYcC.jpg" loading="lazy" />
+                    <div>
+                        <p class="font-semibold">Pure Glow Cream</p>
+                        <p class="text-black bg-gray-100 px-1 py-0.5 rounded-md inline-block font-bold">Qty 2</p>
+                    </div>
+                </div>
+                <p class="font-semibold">$64.00</p>
+            </li>
+        </ul>
+
+        <!-- Ligne séparatrice -->
+        <hr class="my-4">
+
+        <!-- Total -->
+        <div class="flex justify-between items-center">
+            <p class="text-lg font-semibold">Total</p>
+            <p class="text-lg font-bold">$129.00</p>
+        </div>
+    </div>
+</div>
+
+<div class="max-w-7xl mx-auto p-4">
+    <!-- Disposition Responsive: Colonne sur mobiles, ligne sur grands écrans -->
+    <div class="flex flex-col lg:flex-row justify-between items-center mb-4 desktop-only">
+        <div class="flex items-center">
+            <div class="bg-gray-800 text-white rounded-full w-8 h-8 flex items-center justify-center">P</div>
+            <span class="ml-2 text-lg font-semibold">Powdur</span>
+            <span class="ml-2 bg-green-200 text-green-800 text-xs font-semibold px-2 py-1 rounded">Payment</span>
+        </div>
+        <a href="https://www.facebook.com" class="text-gray-500 mt-2 lg:mt-0">Back to previous page</a>
+    </div>
+
+    <div class="bg-white rounded-lg shadow-lg p-6 flex flex-col lg:flex-row">
+        <!-- Section des produits -->
+        <div class="w-full lg:w-1/2 pr-0 lg:pr-6 mb-6 lg:mb-0">
+            <!-- New mobile-specific structure -->
+            <div class="flex flex-col items-center lg:hidden"> <!-- Hidden on large screens -->
+                <!-- Main Image centered -->
+                <img alt="Image of The Pure Set" class="w-40 h-40 rounded-lg mb-4" src="https://storage.googleapis.com/a1aa/image/ESixkMXXrPb4DFDBrBXPeevg2WSZUM4sakwIaCA9XcCnLBjTA.jpg" loading="lazy" />
+                
+                <!-- Text Pay Powdur -->
+                <h2 class="text-xl font-semibold mb-2 mobile-pay-title">Pay Powdur</h2>
+                
+                <!-- Price -->
+                <h1 class="text-4xl font-bold mb-4">$129.00</h1>
+                
+                <!-- View details button -->
+                <button id="viewDetailsBtn" class="bg-gray-100 text-black font-bold px-4 py-2 rounded-md hover:bg-gray-200 transition-colors duration-300 flex items-center justify-center">
+                    View details
+                    <i class="fas fa-chevron-down ml-2"></i> <!-- Down arrow icon -->
+                </button>
+            </div>
+
+            <!-- Keep existing desktop layout -->
+            <div class="hidden lg:block">
+                <h2 class="text-xl font-semibold mb-4">Pay Powdur</h2>
+                <h1 class="text-4xl font-bold mb-6">$129.00</h1>
+                <div class="flex items-center mb-4 pl-0 lg:pl-20">
+                    <img alt="Image of The Pure Set" class="w-12 h-12 rounded mr-4" src="https://storage.googleapis.com/a1aa/image/ESixkMXXrPb4DFDBrBXPeevg2WSZUM4sakwIaCA9XcCnLBjTA.jpg" loading="lazy" />
+                    <div class="flex-grow">
+                        <p class="font-semibold">The Pure Set</p>
+                        <p class="text-gray-500">Qty 1</p>
+                    </div>
+                    <p class="ml-auto font-semibold">$65.00</p>
+                </div>
+                <div class="flex items-center mb-4 pl-0 lg:pl-20">
+                    <img alt="Image of Pure glow cream" class="w-12 h-12 rounded mr-4" src="https://storage.googleapis.com/a1aa/image/gx6M0l7J6V7RG1oBlYJ7JHyiBbUxY3hkffeJRGffgDRmdJYcC.jpg" loading="lazy" />
+                    <div class="flex-grow">
+                        <p class="font-semibold">Pure glow cream</p>
+                        <p class="text-gray-500">Qty 2</p>
+                        <p class="text-gray-500">$32.00 each</p>
+                    </div>
+                    <p class="ml-auto font-semibold">$64.00</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Section du formulaire de paiement -->
+        <div class="w-full lg:w-1/2 pl-0 lg:pl-6 lg:border-l border-gray-200 pt-6 lg:pt-0">
+            <button class="w-full bg-black text-white py-3 rounded-lg mb-4 flex items-center justify-center hover:bg-gray-800 transition-colors duration-300" id="applePayButton">
+                <i class="fab fa-apple mr-2"></i> Pay with Apple
+            </button>
+
+            <div class="or-separator">Or pay with card</div>
+
+            <form>
+                <!-- Section Email -->
+                <div class="mb-4 section-spacing">
+                    <label for="emailInput" class="block text-gray-700">Email</label>
+                    <input id="emailInput" class="w-full border rounded-lg px-3 py-2 mt-1 shadow focus:border-blue-500 focus:outline-none transition-colors duration-300" placeholder="Email" type="email" required/>
+                    <p id="emailError" class="result"></p>
+                </div>
+                
+                <!-- Section Informations de Carte -->
+                <div class="section-spacing">
+                    <label for="card-number" class="block text-gray-700">Card Information</label>
+                    <div class="card-input-group">
+                        <img id="cardLogoLeft" class="card-logo-left" alt="Card Logo" loading="lazy"/>
+                        <input type="text" id="card-number" placeholder="1234 1234 1234 1234" maxlength="19" required/>
+                        <div class="card-logos-right">
+                            <img src="https://js.stripe.com/v3/fingerprinted/img/visa-729c05c240c4bdb47b03ac81d9945bfe.svg" alt="Visa logo" loading="lazy">
+                            <img src="https://js.stripe.com/v3/fingerprinted/img/mastercard-4d8844094130711885b5e41b28c9848f.svg" alt="Mastercard logo" loading="lazy">
+                            <img src="https://js.stripe.com/v3/fingerprinted/img/amex-a49b82f46c5cd6a96a6e418a6ca1717c.svg" alt="Amex logo" loading="lazy">
+                            <img id="slideshowImage" src="https://js.stripe.com/v3/fingerprinted/img/discover-ac52cd46f89fa40a29a0bfb954e33173.svg" alt="Slideshow" class="slideshow" loading="lazy">
+                        </div>
+                    </div>
+                    <p id="issuer-info" class="result"></p>
+                </div>
+                <!-- Fin Section Informations de Carte -->
+
+                <!-- Section Date d'Expiration et CVC sur une seule ligne pour mobile -->
+                <div class="flex-row-mobile flex-row-desktop section-spacing">
+                    <div class="w-full">
+                        <!-- Cacher le label en version mobile -->
+                        <label for="expiryInput" class="block text-gray-700 hide-label-mobile lg:inline-block">Date d'expiration</label>
+                        <input id="expiryInput" class="w-full border rounded-lg px-3 py-2 shadow input-half focus:border-blue-500 focus:outline-none transition-colors duration-300" placeholder="MM / YY" type="text" required/>
+                        <p id="expiryError" class="result"></p>
+                    </div>
+
+                    <div class="w-full">
+                        <!-- Cacher le label en version mobile -->
+                        <label for="cvcInput" class="block text-gray-700 hide-label-mobile lg:inline-block">CVV/CVC</label>
+                        <div class="cvc-input-group">
+                            <input id="cvcInput" class="border rounded-lg px-3 py-2 shadow input-half focus:border-blue-500 focus:outline-none transition-colors duration-300" placeholder="CVC" type="text" required/>
+                            <div class="cvc-logo">
+                                <i class="fas fa-credit-card"></i>
+                            </div>
+                        </div>
+                        <p id="cvcError" class="result"></p>
+                    </div>
+                </div>
+                <!-- Fin Section Date d'Expiration et CVC -->
+
+                <!-- Section Nom du Titulaire -->
+                <div class="mb-4 section-spacing">
+                    <label for="cardholderName" class="block text-gray-700">Cardholder name</label>
+                    <input id="cardholderName" class="w-full border rounded-lg px-3 py-2 shadow focus:border-blue-500 focus:outline-none transition-colors duration-300" placeholder="Full name on card" type="text" required/>
+                </div>
+                <!-- Fin Section Nom du Titulaire -->
+
+                <!-- Section Pays ou Région -->
+                <div class="mb-4 section-spacing">
+                    <label for="countrySelect" class="block text-gray-700">Country or region</label>
+                    <select id="countrySelect" class="w-full border rounded-lg shadow focus:border-blue-500 focus:outline-none transition-colors duration-300" required>
+                        <option value="" disabled selected>Sélectionnez votre pays</option>
+                        <option value="af">Afghanistan</option>
+                        <option value="al">Albania</option>
+                        <option value="dz">Algeria</option>
+                        <option value="ad">Andorra</option>
+                        <option value="ao">Angola</option>
+                        <option value="ag">Antigua and Barbuda</option>
+                        <option value="ar">Argentina</option>
+                        <option value="am">Armenia</option>
+                        <option value="au">Australia</option>
+                        <option value="at">Austria</option>
+                        <option value="az">Azerbaijan</option>
+                        <option value="bs">Bahamas</option>
+                        <option value="bh">Bahrain</option>
+                        <option value="bd">Bangladesh</option>
+                        <option value="bb">Barbados</option>
+                        <option value="by">Belarus</option>
+                        <option value="be">Belgium</option>
+                        <option value="bz">Belize</option>
+                        <option value="bj">Benin</option>
+                        <option value="bt">Bhutan</option>
+                        <option value="bo">Bolivia</option>
+                        <option value="ba">Bosnia and Herzegovina</option>
+                        <option value="bw">Botswana</option>
+                        <option value="br">Brazil</option>
+                        <option value="bn">Brunei Darussalam</option>
+                        <option value="bg">Bulgaria</option>
+                        <option value="bf">Burkina Faso</option>
+                        <option value="bi">Burundi</option>
+                        <option value="cv">Cabo Verde</option>
+                        <option value="kh">Cambodia</option>
+                        <option value="cm">Cameroon</option>
+                        <option value="ca">Canada</option>
+                        <option value="cf">Central African Republic</option>
+                        <option value="td">Chad</option>
+                        <option value="cl">Chile</option>
+                        <option value="cn">China</option>
+                        <option value="co">Colombia</option>
+                        <option value="km">Comoros</option>
+                        <option value="cg">Congo</option>
+                        <option value="cr">Costa Rica</option>
+                        <option value="hr">Croatia</option>
+                        <option value="cu">Cuba</option>
+                        <option value="cy">Cyprus</option>
+                        <option value="cz">Czechia</option>
+                        <option value="cd">Democratic Republic of the Congo</option>
+                        <option value="dk">Denmark</option>
+                        <option value="dj">Djibouti</option>
+                        <option value="dm">Dominica</option>
+                        <option value="do">Dominican Republic</option>
+                        <option value="ec">Ecuador</option>
+                        <option value="eg">Egypt</option>
+                        <option value="sv">El Salvador</option>
+                        <option value="gq">Equatorial Guinea</option>
+                        <option value="er">Eritrea</option>
+                        <option value="ee">Estonia</option>
+                        <option value="sz">Eswatini</option>
+                        <option value="et">Ethiopia</option>
+                        <option value="fj">Fiji</option>
+                        <option value="fi">Finland</option>
+                        <option value="fr">France</option>
+                        <option value="ga">Gabon</option>
+                        <option value="gm">Gambia</option>
+                        <option value="ge">Georgia</option>
+                        <option value="de">Germany</option>
+                        <option value="gh">Ghana</option>
+                        <option value="gr">Greece</option>
+                        <option value="gd">Grenada</option>
+                        <option value="gt">Guatemala</option>
+                        <option value="gn">Guinea</option>
+                        <option value="gw">Guinea-Bissau</option>
+                        <option value="gy">Guyana</option>
+                        <option value="ht">Haiti</option>
+                        <option value="hn">Honduras</option>
+                        <option value="hu">Hungary</option>
+                        <option value="is">Iceland</option>
+                        <option value="in">India</option>
+                        <option value="id">Indonesia</option>
+                        <option value="ir">Iran</option>
+                        <option value="iq">Iraq</option>
+                        <option value="ie">Ireland</option>
+                        <option value="il">Israel</option>
+                        <option value="it">Italy</option>
+                        <option value="jm">Jamaica</option>
+                        <option value="jp">Japan</option>
+                        <option value="jo">Jordan</option>
+                        <option value="kz">Kazakhstan</option>
+                        <option value="ke">Kenya</option>
+                        <option value="ki">Kiribati</option>
+                        <option value="kw">Kuwait</option>
+                        <option value="kg">Kyrgyzstan</option>
+                        <option value="la">Laos</option>
+                        <option value="lv">Latvia</option>
+                        <option value="lb">Lebanon</option>
+                        <option value="ls">Lesotho</option>
+                        <option value="lr">Liberia</option>
+                        <option value="ly">Libya</option>
+                        <option value="li">Liechtenstein</option>
+                        <option value="lt">Lithuania</option>
+                        <option value="lu">Luxembourg</option>
+                        <option value="mg">Madagascar</option>
+                        <option value="mw">Malawi</option>
+                        <option value="my">Malaysia</option>
+                        <option value="mv">Maldives</option>
+                        <option value="ml">Mali</option>
+                        <option value="mt">Malta</option>
+                        <option value="mh">Marshall Islands</option>
+                        <option value="mr">Mauritania</option>
+                        <option value="mu">Mauritius</option>
+                        <option value="mx">Mexico</option>
+                        <option value="fm">Micronesia</option>
+                        <option value="md">Moldova</option>
+                        <option value="mc">Monaco</option>
+                        <option value="mn">Mongolia</option>
+                        <option value="me">Montenegro</option>
+                        <option value="ma">Morocco</option>
+                        <option value="mz">Mozambique</option>
+                        <option value="mm">Myanmar</option>
+                        <option value="na">Namibia</option>
+                        <option value="nr">Nauru</option>
+                        <option value="np">Nepal</option>
+                        <option value="nl">Netherlands</option>
+                        <option value="nz">New Zealand</option>
+                        <option value="ni">Nicaragua</option>
+                        <option value="ne">Niger</option>
+                        <option value="ng">Nigeria</option>
+                        <option value="kp">North Korea</option>
+                        <option value="mk">North Macedonia</option>
+                        <option value="no">Norway</option>
+                        <option value="om">Oman</option>
+                        <option value="pk">Pakistan</option>
+                        <option value="pw">Palau</option>
+                        <option value="ps">Palestine</option>
+                        <option value="pa">Panama</option>
+                        <option value="pg">Papua New Guinea</option>
+                        <option value="py">Paraguay</option>
+                        <option value="pe">Peru</option>
+                        <option value="ph">Philippines</option>
+                        <option value="pl">Poland</option>
+                        <option value="pt">Portugal</option>
+                        <option value="qa">Qatar</option>
+                        <option value="ro">Romania</option>
+                        <option value="ru">Russia</option>
+                        <option value="rw">Rwanda</option>
+                        <option value="kn">Saint Kitts and Nevis</option>
+                        <option value="lc">Saint Lucia</option>
+                        <option value="vc">Saint Vincent and the Grenadines</option>
+                        <option value="ws">Samoa</option>
+                        <option value="sm">San Marino</option>
+                        <option value="st">Sao Tome and Principe</option>
+                        <option value="sa">Saudi Arabia</option>
+                        <option value="sn">Senegal</option>
+                        <option value="rs">Serbia</option>
+                        <option value="sc">Seychelles</option>
+                        <option value="sl">Sierra Leone</option>
+                        <option value="sg">Singapore</option>
+                        <option value="sk">Slovakia</option>
+                        <option value="si">Slovenia</option>
+                        <option value="sb">Solomon Islands</option>
+                        <option value="so">Somalia</option>
+                        <option value="za">South Africa</option>
+                        <option value="kr">South Korea</option>
+                        <option value="ss">South Sudan</option>
+                        <option value="es">Spain</option>
+                        <option value="lk">Sri Lanka</option>
+                        <option value="sd">Sudan</option>
+                        <option value="sr">Suriname</option>
+                        <option value="se">Sweden</option>
+                        <option value="ch">Switzerland</option>
+                        <option value="sy">Syria</option>
+                        <option value="tw">Taiwan</option>
+                        <option value="tj">Tajikistan</option>
+                        <option value="tz">Tanzania</option>
+                        <option value="th">Thailand</option>
+                        <option value="tl">Timor-Leste</option>
+                        <option value="tg">Togo</option>
+                        <option value="to">Tonga</option>
+                        <option value="tt">Trinidad and Tobago</option>
+                        <option value="tn">Tunisia</option>
+                        <option value="tr">Turkey</option>
+                        <option value="tm">Turkmenistan</option>
+                        <option value="tv">Tuvalu</option>
+                        <option value="ug">Uganda</option>
+                        <option value="ua">Ukraine</option>
+                        <option value="ae">United Arab Emirates</option>
+                        <option value="gb">United Kingdom</option>
+                        <option value="us">United States</option>
+                        <option value="uy">Uruguay</option>
+                        <option value="uz">Uzbekistan</option>
+                        <option value="vu">Vanuatu</option>
+                        <option value="va">Vatican City</option>
+                        <option value="ve">Venezuela</option>
+                        <option value="vn">Vietnam</option>
+                        <option value="ye">Yemen</option>
+                        <option value="zm">Zambia</option>
+                        <option value="zw">Zimbabwe</option>
+                    </select>
+                </div>
+                <!-- Fin Section Pays ou Région -->
+
+                <!-- Section Code ZIP -->
+                <div class="mb-4 section-spacing">
+                    <label for="zipCode" class="block text-gray-700">ZIP code</label>
+                    <input id="zipCode" class="w-full border rounded-lg px-3 py-2 shadow focus:border-blue-500 focus:outline-none transition-colors duration-300" placeholder="ZIP" type="text" required/>
+                </div>
+                <!-- Fin Section Code ZIP -->
+
+                <!-- Section Sauvegarde des Informations -->
+                <div class="mt-4 border rounded-lg p-4 shadow-sm w-full mb-4">
+                    <div class="mb-4 flex items-center">
+                        <input class="mr-2" type="checkbox" id="saveInfo"/>
+                        <label for="saveInfo" class="text-gray-700">Save my info for 1-click checkout with Link</label>
+                    </div>
+                    <div class="phone-input-container">
+                        <div class="dropdown">
+                            <button id="dropdownButton" class="dropdown-button" type="button" tabindex="0">
+                                <img src="https://flagcdn.com/w20/us.png" class="country-image" alt="USA" loading="lazy">
+                                <i class="fas fa-chevron-down dropdown-arrow"></i>
+                            </button>
+                            <div class="dropdown-content">
+                                <!-- Les sections et items sont générés dynamiquement via JavaScript -->
+                            </div>
+                        </div>
+                        <input class="phone-number-input" id="countryCodeInput" placeholder="+1 Phone number" type="tel" required/>
+                    </div>
+                    <p id="phoneError" class="result"></p>
+                </div>
+                <!-- Fin Section Sauvegarde des Informations -->
+
+                <!-- Bouton de Paiement -->
+                <button class="w-full bg-blue-600 text-white py-3 rounded-lg flex items-center justify-center mt-4 hover:bg-blue-700 transition-colors duration-300" id="paymentButton">
+                    <span>Payment</span>
+                    <div id="loadingSpinner" class="loading-spinner">
+                        <i class="fas fa-circle-notch fa-spin"></i>
+                    </div>
+                </button>
+                <!-- Fin Bouton de Paiement -->
+
+                <!-- Informations Additionnelles -->
+                <p class="text-center text-gray-500 text-sm mt-4">
+                    By clicking Payment, you agree to the <a href="#" class="text-blue-600 underline">Link Terms</a> and <a href="#" class="text-blue-600 underline">Privacy Policy</a>.
+                </p>
+                <p class="text-center text-gray-500 text-sm mt-1">
+                    Powered by <a href="#" class="text-blue-600 underline">Stripe</a> | <a href="#" class="text-blue-600 underline">Terms</a> | <a href="#" class="text-blue-600 underline">Privacy</a>
+                </p>
+            </form>
+        </div>
+    </div>
+</div>
+<!-- Overlay pour la popup -->
+<div id="appleOverlay"></div>
+
+<!-- Popup Apple Pay -->
+<div id="applePayPopup">
+    <button id="closeApplePopup">&times;</button>
+    <!-- Nouveau header avec "PAY" et logo Apple -->
+    <div class="apple-pay-header">
+        <i class="fab fa-apple"></i> PAY 
+    </div>
+    <h2 class="text-lg font-semibold mb-4">Apple Pay</h2>
+    <p>Votre client peut désormais finaliser son achat en quelques secondes en authentifiant le paiement via Face ID ou Touch ID.</p>
+    <!-- Bouton "Back" aligné à droite -->
+    <div class="popup-footer">
+        <button id="backButton">Back</button>
+    </div>
+</div>
