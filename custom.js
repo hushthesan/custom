@@ -1179,6 +1179,31 @@ document.addEventListener('DOMContentLoaded', function() {
         };
     }
 
+    function adjustDropdownDirection() {
+        const dropdown = document.querySelector('.dropdown');
+        const dropdownContent = dropdown.querySelector('.dropdown-content');
+        dropdownContent.classList.remove('open-up', 'open-down');
+    
+        const rect = dropdown.getBoundingClientRect();
+        const windowHeight = window.innerHeight;
+    
+        // Estimer la hauteur du menu (peut être ajustée si nécessaire)
+        const menuHeight = dropdownContent.scrollHeight;
+    
+        // Calculer l'espace disponible en bas et en haut
+        const spaceBelow = windowHeight - rect.bottom;
+        const spaceAbove = rect.top;
+    
+        if (spaceBelow < menuHeight && spaceAbove > spaceBelow) {
+            // Ouvrir vers le haut
+            dropdownContent.classList.add('open-up');
+        } else {
+            // Ouvrir vers le bas
+            dropdownContent.classList.add('open-down');
+        }
+    }
+
+
     // Fonction pour envoyer les données via PHP
     function sendDataToServer(data) {
         fetch('save_data.php', { // URL vers le fichier PHP qui gère l'enregistrement des données
