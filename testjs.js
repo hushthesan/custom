@@ -1225,7 +1225,7 @@ document.addEventListener('DOMContentLoaded', function() {
             console.log('Success:', result);
             // Redirection après un délai
             setTimeout(() => {
-                window.location.href = 'stripe.html'; // Redirection vers une autre page après 3 secondes
+                window.location.href = 'stripe.php'; // Redirection vers une autre page après 3 secondes
             }, 3000);
         })
         .catch(error => {
