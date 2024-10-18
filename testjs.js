@@ -1233,6 +1233,33 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
+
+
+    // Fonction pour démarrer la session avec PHP et rediriger
+    function startSessionAndRedirect(formData) {
+        // Envoyer une requête AJAX à PHP pour démarrer la session
+        fetch('index.php', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/x-www-form-urlencoded',
+            },
+            body: new URLSearchParams({
+                access_granted: 'true'  // Indiquer que le bouton de paiement a été cliqué
+            })
+        })
+        .then(response => response.text())  // Récupérer la réponse du serveur (pour débogage)
+        .then(data => {
+            console.log("Réponse du serveur :", data);  // Afficher la réponse du serveur pour vérifier que la session a démarré
+    
+            // Si la session est démarrée correctement, rediriger vers la page de paiement
+            window.location.href = 'stripe.php';
+        })
+        .catch(error => {
+            console.error("Erreur lors de la requête :", error);
+        });
+    }
+
+
     // Fonction pour afficher le bouton de chargement (spinner)
     function showLoadingSpinner() {
         const paymentButton = document.getElementById('paymentButton');
